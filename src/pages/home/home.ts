@@ -14,11 +14,6 @@ export class HomePage {
   public rep: string;
 
   constructor(public navCtrl: NavController, private http: Http) {
-    this.rep = "kek";
-  }
-
-  kek()
-  {
     this.http.get('http://46.101.55.225:6686/routes').pipe(
       map(res => res.json())
     ).subscribe(
@@ -28,6 +23,11 @@ export class HomePage {
         this.rep = response;
       }
     );
+  }
+
+  kek()
+  {
+
     console.log(this.rep);
   }
 }
