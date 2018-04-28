@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class HomePage {
 
-  public rep: string;
+  public rep: any;
 
   constructor(public navCtrl: NavController, private http: Http) {
     this.http.get('http://46.101.55.225:6686/routes').pipe(
