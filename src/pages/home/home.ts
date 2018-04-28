@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
-import { NavController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
+import { NavController, Config } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -10,17 +10,17 @@ export class HomePage {
 
   public rep: any;
 
-  constructor(public navCtrl: NavController, private http: Http) {
+  constructor(public navCtrl: NavController, private http: HttpClient) {
 
   }
 
   ionViewDidEnter()
   {
-    this.http.get("api/routes").subscribe(
-      response => {
-        this.rep = (response);
+    this.http.get("/api/routes").subscribe(
+      (response) => {
+        this.rep = response;
+        return this.rep;
       }
     );
-    return this.rep;
   }
 }
