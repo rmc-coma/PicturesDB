@@ -16,7 +16,7 @@ export class HomePage {
 
   ionViewDidEnter()
   {
-    this.http.get("api/root").subscribe(
+    this.http.get("api/routes").subscribe(
       response => {
         this.rep = (response);
       }

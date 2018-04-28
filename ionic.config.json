@@ -5,6 +5,10 @@
   "integrations": {
     "cordova": {}
   },
-  "proxies": [1],
-  "proxyUrl": "46.101.55.225:6686"
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:6686"
+    }
+  ]
 }
