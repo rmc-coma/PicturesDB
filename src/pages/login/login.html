@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding text-center>
+  <div ion-fixed>
+    <form [formGroup]="this.loginForm" (ngSubmit)="submitLogin()" >
+      <ion-item no-lines margin-horizontal>
+        <ion-input formControlName="email" [placeholder]="this.placeHolder.email" type="email"></ion-input>
+      </ion-item>
+      <ion-item no-lines margin-horizontal>
+        <ion-input formControlName="password" [placeholder]="this.placeHolder.password" type="{{this.displayPassword ? 'text' : 'password'}}" clearOnEdit="false"></ion-input>
+        <ion-icon item-right (click)="this.switchDisplayPassword()" ></ion-icon>
+      </ion-item>
+      <button ion-button type="submit" block>Se connecter</button>
+    </form>
+  </div>
+</ion-content>
