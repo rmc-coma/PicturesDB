@@ -71,24 +71,15 @@ export class LoginPage {
         this.sessionService.open(session, true).subscribe(
           (session) => 
           {
-            localStorage.setItem("loggedIn", "true");
-            return (session);
-          },
-          (error) =>
-          {
-            localStorage.setItem("loggedIn", "false");
             return (session);
           }
         );
-        localStorage.setItem("loggedIn", "true");
       },
       (error) =>
       {
         this.showLoginError();
-        localStorage.setItem("loggedIn", "false");
       }
     );
-    if (localStorage.getItem("loggedIn") == "true")
-      this.navCtrl.popToRoot();
+    this.navCtrl.popToRoot(); //change
   }
 }
